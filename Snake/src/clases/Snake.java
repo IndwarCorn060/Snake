@@ -67,7 +67,7 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 		
 		jugar();
 		
-		JOptionPane.showMessageDialog(null,"Score: "+(int)(this.score*100), "information", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null,"Score: "+(long)(this.score*100), "information", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	private void jugar() {
