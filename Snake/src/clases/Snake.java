@@ -27,7 +27,7 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 	private Comida comida;
 	private int longitud;
 	private int dificultad;
-	private float score;
+	private long score;
 	
 	private JButton btnjugar;
 	
@@ -67,7 +67,7 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 		
 		jugar();
 		
-		JOptionPane.showMessageDialog(null,"Score: "+(long)(this.score*100), "information", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null,"Score: "+this.score, "information", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	private void jugar() {
@@ -137,7 +137,8 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 		if(cabeza.getX()==comida.getX()&&cabeza.getY()==comida.getY()) {
 			System.out.println("ha comido");
 			this.crecer(cabeza.getX(), cabeza.getY());
-			this.score+=((float)this.longitud)*(((float)this.dificultad+1f)/5f)*(40/this.dx);
+			this.score+=(long)(((float)this.longitud)*(((float)this.dificultad+1f)/5f)*(40f/this.dx)*100);
+			this.setTitle("Score: "+this.score);
 			generaComida();
 		}
 		

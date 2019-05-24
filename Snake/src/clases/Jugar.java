@@ -43,6 +43,7 @@ public class Jugar extends JDialog implements ActionListener{
 		c.add(der, BorderLayout.EAST);
 		der.add(this.dificultad);
 		this.dificultad.setSelectedIndex(1);
+		this.setTitle("Snake");
 		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		this.setSize(400,200);
 		this.setModal(true);
