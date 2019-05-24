@@ -167,7 +167,7 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 	
 	public void generaComida() {
 		this.comida = new Comida(dx, dy);
-		if(this.campo[comida.getY()][comida.getX()].getBackground()!=Color.RED) {
+		if(this.campo[comida.getY()][comida.getX()].getBackground()!=Color.RED&&(comida.getY()==this.cuerpo.getLast().getY()&&comida.getX()==this.cuerpo.getLast().getX())) {
 			this.campo[comida.getY()][comida.getX()].setBackground(Color.BLUE);
 		}
 		else {
