@@ -137,7 +137,7 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 		if(cabeza.getX()==comida.getX()&&cabeza.getY()==comida.getY()) {
 			System.out.println("ha comido");
 			this.crecer(cabeza.getX(), cabeza.getY());
-			this.score+=((float)this.longitud)*(((float)this.dificultad+1f)/5f)*(50/this.dx);
+			this.score+=((float)this.longitud)*(((float)this.dificultad+1f)/5f)*(40/this.dx);
 			generaComida();
 		}
 		
@@ -197,8 +197,13 @@ public class Snake extends JFrame implements KeyListener, ActionListener{
 			
 			
 			if(!e.getSalir()) {
-				Snake snake = new Snake((byte)e.getTxtfcasillas(), (byte)e.getTxtfcrecer(), e.getDificultad());
-				snake.dispose();
+				try {
+					Snake snake = new Snake((byte)e.getTxtfcasillas(), (byte)e.getTxtfcrecer(), e.getDificultad());
+					snake.dispose();
+				}
+				catch(Exception ex) {
+					ex.printStackTrace();
+				}
 			}
 			else {
 				System.exit(0);
